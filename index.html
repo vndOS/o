@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending Operating System</title>
+	<link rel="icon" href="img/logo.svg" type="image/icon type">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body><center>
+
+    <div class="menu-btn">
+        <img src="img/logobw.svg" class="icon">
+    </div>
+    <div class="container">
+        <nav class="main-nav">
+            
+            <img src="img/logo.svg" class="logo">
+            
+            <ul class="main-menu">
+            <li><a href="https://dse.ibx.lat" target="_blank">Application</a></li>
+            <li><a href="https://dse.ibx.lat/POS/pages/register.php?case_sw=Register" target="_blank">Register</a></li>
+            <li><a href="https://dse.ibx.lat/POS/pages/register.php?case_sw=Recover" target="_blank">Recover</a></li>
+            <li><a href="#frame_content" onClick="frameF()">Tutorial</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">YouTube</a></li>
+            </ul>
+
+            <ul class="right-menu">
+            
+            <!--<li>
+                <a href="#">
+                    <img src="img/logobw.svg" class="icon2">
+                </a>
+            </li>-->
+            </ul>
+        </nav>
+
+
+
+        <header>
+            <iframe class="showcase" frameborder="0" src="slider/index.html" name="slider">
+
+            </iframe> 
+        </header>
+
+        
+
+        <section class="xbox">
+            <div class="content">
+                <h2>Getting Started?</h2>
+                <p>watch this two minutes tutorial</p>
+
+                <a class="btn" id="frame_btn" onClick="frameF()">
+                    Start
+                </a>
+            </div>
+        </section>
+		
+		<div id="content">
+
+				<iframe src="" class="content" name="content" width="100%" height="750px" id="frame_content">
+				</iframe>
+    
+
+		</div><br>
+
+        <section class="home-cards">
+            <div>
+                <img src="img/a1.jpg" class="card1" onClick="frameClo()">
+                <h3>Cloud Computing</h3>
+                <p>
+                    Three ways that Cloud computing enables Remote Working
+                </p>
+                <a href="" id="frame_clocom" onClick="frameClo()">Learn More<b></b></a>
+            </div>
+            <div>
+                <img src="img/a4.jpg" class="card1" onClick="frameCy()">
+                <h3>The Most Dangerous Cyber Security Mistakes</h3>
+                <p>Employers are steadily investing more time and money into cyber security training; it may be a case of too little too late for some businesses
+                </p>
+                <a href="" id="frame_cysec" onClick="frameCy()">Learn More<b></b></a>
+            </div>
+            <div>
+                <img src="img/a3.jpg" class="card1" onClick="frameAi()">
+                <h3>Artificial Intelligence</h3>
+                <p>16 Examples of Artificial Intelligence Across 6 Industries
+                </p>
+                <a href="" id="frame_arin" onClick="frameAi()">Learn More<b></b></a>
+            </div>
+            <div>
+                <img src="img/a2.jpg" class="card1" onClick="frameWb()">
+                <h3>What Is Web Development?</h3>
+                <p>With more organisations willing to attract a large set of customers globally, the need for an aesthetically pleasing, responsive, and user-friendly website is growing.
+                </p>
+                <a href="" id="frame_webdev" onClick="frameWb()">Learn More<b></b></a>
+            </div>
+        </section>
+		
+		
+
+        <section class="follow">
+            <p>Follow VendOS</p>
+            <a href="#">
+                <img src="img/facebook.svg" class="icon">
+            </a>
+            <a href="#">
+                <img src="img/twitter.svg" class="icon">
+            </a>
+            <a href="#">
+                <img src="img/youtube.svg" class="icon">
+            </a>
+        </section>
+    </div>
+        <section class="links">
+            <div class="links-inner">
+                <img src="img/1.svg" class="svg_pos1"><img src="img/2.svg" class="svg_pos2"><img src="img/3.svg" class="svg_pos3"><img src="img/4.svg" class="svg_pos4"><img src="img/5.svg" class="svg_pos5"><img src="img/6.svg" class="svg_pos6">
+            </div>
+        </section>
+
+        <fotter class="footer">
+            <div class="footer-inner">
+                <div><img src="img/logo.svg" class="icon">English US</div>
+                <ul>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#">&copy; VendOS 2020</a></li>
+                </ul>
+            </div>
+        </footer>
+    
+<script>
+  document.querySelector('.menu-btn').addEventListener('click', () => document.querySelector('.main-menu').classList.toggle('show'));
+  
+  const frame_btn = document.getElementById("frame_btn");
+  const frame_content = document.getElementById("frame_content");
+  const frame_clocom = document.getElementById("frame_clocom");
+  const frame_cysec = document.getElementById("frame_cysec");
+  const frame_arin = document.getElementById("frame_arin");
+  const web_dev = document.getElementById("web_dev");
+  
+  function frameF(){
+    frame_content.setAttribute("src","tuto/index.html");
+  	frame_content.style.display = "block";
+	frame_btn.innerText = "Close";
+	frame_btn.setAttribute("href","#frame_content");
+	frame_btn.setAttribute("onclick","closeframeF()");
+  }
+  
+  function closeframeF(){
+  	frame_content.style.display = "none";
+	frame_btn.innerText = "Start";
+	frame_btn.setAttribute("href","#");
+	frame_btn.setAttribute("onclick","frameF()");
+	frame_content.setAttribute("src","");
+  }
+  
+  function frameClo(){
+  	frame_content.style.display = "block";
+  	frame_content.setAttribute("src","clocom/index2.html");
+	frame_clocom.setAttribute("href","#frame_content");
+  }
+  
+  function frameCy(){
+  	frame_content.style.display = "block";
+  	frame_content.setAttribute("src","cysec/index2.html");
+	frame_cysec.setAttribute("href","#frame_content");
+  }
+  
+  function frameAi(){
+  	frame_content.style.display = "block";
+  	frame_content.setAttribute("src","arin/index2.html");
+	frame_arin.setAttribute("href","#frame_content");
+  }
+  
+  function frameWb(){
+  	frame_content.style.display = "block";
+  	frame_content.setAttribute("src","webdev/index2.html");
+	frame_webdev.setAttribute("href","#frame_content");
+  }
+</script>
+
+</body>
+</html>
