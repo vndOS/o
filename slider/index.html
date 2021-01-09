@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Header Slider</title>
+    <script src=""></script>
+   
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+	body{
+    background-color:#262626;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    header {
+        position: relative;
+	
+    }
+    .slide {
+        text-align: center;
+        padding: 150px 50px;
+        background-size: cover;
+        color: white;
+        /*font-family: sans-serif;*/
+	
+	
+	
+    }
+    .s1 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc9.jpg);
+	
+	
+    }
+    .s2 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc5.jpg);
+        display: none;
+	
+    }
+    .s3 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc4.jpg);
+        display: none;
+    	
+	}
+    .s4 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc1.jpg);
+	display: none;
+	
+    }
+    .s5 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc10.jpg);
+        display: none;
+	
+    }
+    .s6 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc11.jpg);
+        display: none;
+	
+    }
+    .s7 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc7.jpg);
+	display: none;
+	
+    }
+    .s8 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc12.jpg);
+        display: none;
+	
+    }
+    .s9 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc2.jpg);
+        display: none;
+	
+    }
+    .s10 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc6.jpg);
+	display: none;
+	
+    }
+    .s11 {
+        background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,102,0.7),rgba(0,0,0,0)),url(sc3.jpg);
+        display: none;
+	
+    }
+    
+	
+    .slide h1 {
+        font-size: 6vw;
+        margin-bottom: 20px;
+	text-shadow: 4px 4px 4px #000000;
+	z-index:20;
+    }
+    .slide p {
+        font-size: 3vw;
+        margin-bottom: 20px;
+        text-shadow: 4px 4px 4px #000000;
+	z-index:20;
+	
+    }
+    
+
+   button{
+	padding: 5px 0px;
+        border: initial;
+}
+
+    .boton {
+        font-size: 40pt;
+        font-weight: bolder;
+        position: absolute;
+        top: 40%;
+	color: white;
+        background-color:#262626;
+        padding: 0px 10px;
+        cursor: pointer;
+    }
+    .boton:hover {
+	color: black;
+	background-color: rgba(255,255,255,0.4);
+        transition: 0.5s;
+    }
+    .derecha {
+        right: 10px;
+        border-radius:50%;
+	padding-bottom:10px;
+        
+    }
+    .izquierda {
+        left: 10px;
+        border-radius:50%;
+	padding-bottom:10px;
+        
+    }
+
+    /*PAGINACIÓN*/
+
+    .paginacion {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: -50px;
+        text-align: center;
+    
+
+    }
+
+	
+
+    .paginacion li {
+        list-style: none;
+        width: 25px;
+        height: 25px;
+        background-color:black;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+	color:white;
+        
+    }
+
+    .paginacion li:first-of-type{
+        background-color:white;
+    }
+
+    .paginacion li:hover {
+        background-color: white;
+	color:#262626;
+        transition: 0.5s;
+    }
+
+    @keyframes transicion1 {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    
+.links{
+	text-decoration:none;
+        background-color: white;
+	color:black;
+        padding: 5px 50px;
+        border: initial;
+	cursor:pointer;
+        font-weight:bold;
+	padding:10px 10px;
+}
+
+.links:hover {
+	background-color: #262626;
+	color:white;
+        
+        transition: 0.5s;
+    }
+   
+    
+</style>
+</head>
+<body>
+<header>
+    <div class="slide s1">
+        <h1>Make The Deal</h1>
+        <p>in a secured web environment</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+    <div class="slide s2">
+        <h1>Using Personal Devices</h1>
+        <p>freely around your business</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+    <div class="slide s3">
+        <h1>Invoice From Any Terminal</h1>
+        <p>on any browser connected printer</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+	<div class="slide s4">
+        <h1>Prices Updated</h1>
+        <p>immediately in web technologies</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+    <div class="slide s5">
+        <h1>Partners Inventory</h1>
+        <p>with vendors online now</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+    <div class="slide s6">
+        <h1>Customized Invoices</h1>
+        <p>access from anywhere at any time</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+	<div class="slide s7">
+        <h1>Any Web Browser</h1>
+        <p>no installing</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+    <div class="slide s8">
+        <h1>Handle Sales Flow</h1>
+        <p>no awkward local servers</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+    <div class="slide s9">
+        <h1>A Close Eye On The Customers</h1>
+        <p>improving the business process</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+	<div class="slide s10">
+        <h1>In The Key Point</h1>
+        <p>where the business pays off</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+    <div class="slide s11">
+        <h1>A Private Personal Platform</h1>
+        <p>individuals get team goals</p>
+        <button><a href="https://dse.ibx.lat" target="_blank" class="links">Enter Application</a></button>
+    </div>
+    
+    <div class="boton derecha">&gt;</div>
+    <div class="boton izquierda">&lt;</div>
+    <ul class="paginacion">
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>  
+       <li></li>
+       <li></li>
+       <li></li>  
+       <li></li>
+       <li></li>         
+    </ul>
+</header>
+
+<script>
+
+    const derecha=document.querySelector(".derecha");
+    const izquierda=document.querySelector(".izquierda");
+    const slides=document.querySelectorAll(".slide");
+    const paginacion=document.querySelectorAll(".paginacion > li");
+    
+
+    let indice=0;
+
+    
+
+    derecha.addEventListener("click", function(){
+        irDerecha();
+        
+    });
+
+    izquierda.addEventListener("click", function(){
+        irIzquierda();
+        
+    });
+
+    for(let i=0;i<slides.length;i++){
+        paginacion[i].addEventListener("click", function(){
+                indice=i;
+                colorPaginacion();
+                irSlide(indice);
+        });
+    }
+
+    function irSlide(ind){
+        for(let i=0;i<slides.length;i++){
+            slides[i].style.display="none";
+        }
+        slides[ind].style.display="block";
+    }
+
+    function irDerecha(){
+        
+        
+        slides[indice].style.display="none";
+        
+        indice++;
+
+        if(indice>slides.length-1){
+            indice=0;
+        }
+        
+        slides[indice].style.animation="transicion1 2s";
+        slides[indice].style.display="block";
+        colorPaginacion();
+        
+    }
+
+    function irIzquierda(){
+        
+        
+        slides[indice].style.display="none";
+        
+        indice--;
+        
+        if(indice<0){
+            indice=slides.length-1;
+        }
+        
+        
+        slides[indice].style.display="block";
+        colorPaginacion();
+    }
+
+    function colorPaginacion(){
+        for(let i=0;i<slides.length;i++){
+            paginacion[i].style.backgroundColor="black";
+        }
+        
+        paginacion[indice].style.backgroundColor="white";
+    }
+
+    const cabecera=document.querySelector("header");
+    let intervalo=setInterval(irDerecha,7000);
+
+   
+    
+</script>
+
+
+
+</body>
+</html>
