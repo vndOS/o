@@ -288,19 +288,19 @@ ul{
 
 @keyframes myanimation1{
     
-    0% {top:0;}
+    0% {opacity:1;top:0;}
     10% {top:15px;}
     15% {top:10px;}
     20% {top:5px;}
     25% {top:0;}
     30% {top:-5px;}
     40% {top:-10px;}
-    50% {top:-15px;}
+    50% {opacity:0.6;top:-15px;}
     60% {top:-10px;}
     70% {top:-5px;}
     80% {top:0;}
     90% {top:5px;}
-    100% {top:10px;}
+    100% {opacity:1;top:10px;}
 }
 
 .svg_pos2{
@@ -317,19 +317,19 @@ ul{
 
 @keyframes myanimation2{
     
-     0% {top:0;}
+     0% {opacity:0.6;top:0;}
     10% {top:10px;}
     15% {top:5px;}
     20% {top:0px;}
     25% {top:-5px;}
     30% {top:-10px;}
     40% {top:-15px;}
-    50% {top:-10px;}
+    50% {opacity:1;top:-10px;}
     60% {top:-5px;}
     70% {top:0;}
     80% {top:5px;}
     90% {top:10px;}
-    100% {top:15px;}
+    100% {opacity:0.6;top:15px;}
 }
 
 .svg_pos3{
@@ -346,19 +346,19 @@ ul{
 
 @keyframes myanimation3{
     
-    0% {top:0;}
+    0% {opacity:1;top:0;}
     10% {top:5px;}
     15% {top:0;}
     20% {top:-5px;}
     25% {top:-10px;}
     30% {top:-15px;}
     40% {top:-10px;}
-    50% {top:-5px;}
+    50% {opacity:0.6;top:-5px;}
     60% {top:0;}
     70% {top:5px;}
     80% {top:10px;}
     90% {top:15px;}
-    100% {top:10px;}
+    100% {opacity:1;top:10px;}
 }
 
 .svg_pos4{
@@ -375,19 +375,19 @@ ul{
 
 @keyframes myanimation4{
     
-     0% {top:0;}
+     0% {opacity:0.6;top:0;}
     10% {top:0;}
     15% {top:-5px;}
     20% {top:-10px;}
     25% {top:-15px;}
     30% {top:-10px;}
     40% {top:-5px;}
-    50% {top:0;}
+    50% {opacity:1;top:0;}
     60% {top:5px;}
     70% {top:10px;}
     80% {top:15px;}
     90% {top:10px;}
-    100% {top:5px;}
+    100% {opacity:0.6;top:5px;}
 }
 
 .svg_pos5{
@@ -433,19 +433,19 @@ ul{
 
 @keyframes myanimation6{
     
-     0% {top:0;}
+     0% {opacity:1;top:0;}
     10% {top:-10px;}
     15% {top:-15px;}
     20% {top:-10px;}
     25% {top:-5px;}
     30% {top:0;}
     40% {top:5px;}
-    50% {top:10px;}
+    50% {opacity:0.6;top:10px;}
     60% {top:15px;}
     70% {top:10px;}
     80% {top:5px;}
     90% {top:0;}
-    100% {top:-5px;}
+    100% {opacity:1;top:-5px;}
 }
 
 
