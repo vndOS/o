@@ -1,0 +1,359 @@
+<!doctype html>
+
+<header><title>Analytics Demo</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="vndos_style.css">
+
+<style>
+
+#canvas{
+
+    cursor: crosshair;
+    width:90%;
+    margin-left:0px;
+    box-shadow:0 0 20px 10px black;
+    background-color:white;
+    border-radius:10px;
+}
+
+</style>
+
+</header>
+
+<body>
+
+<div class="navbar">
+
+	<ul>
+		<li><a href="#" class="navlinks_first">Lobby</a></li>
+		<li><a href="#" class="navlinks">Categories</a></li>
+		<li><a href="#" class="navlinks">Brands</a></li>
+		<li><a href="#" class="navlinks">Products</a></li>
+		<li><a href="#" class="navlinks">Vendors</a></li>
+		<li><a href="#" class="navlinks">Customers</a></li>
+		<li><a href="#" class="navlinks">Invoice</a></li>
+		<li><a href="#" class="navlinks">Vending</a></li>
+		<li><a href="#" class="navlinks_active">Analytics</a></li>
+	</ul>
+
+</div><br>
+
+<div class="user_info_right">
+<ul>
+	<li><img src="./img/logout.svg" class="logout" title="Close Session" onClick=""><p class="userinfo">vndos2@gmail.com</p>
+	</li>
+</ul>
+</div>
+
+<div class="user_info_left">
+<ul>
+	<li><p class="userinfo">VndOS as Admin</p></li>
+</ul>
+</div>
+
+<br><br><br><br><br><br>
+
+<div class="row2">
+
+        <center><h2>Elegance Electronics & Outfit LLC</h2>
+
+</div>
+
+<br><br>
+
+<div class="row2">
+
+    <div class="box3">
+
+        <center>
+        <label><i>From</i></label><br><br>
+	    <input type="date" id="date_from" placeholder="YYYY-MM-DD" onchange="set_date()">
+
+    </div>
+    
+    <div class="box3">
+
+        <center>
+        <label><i>To</i></label><br><br>
+	    <input type="date" id="date_to" placeholder="YYYY-MM-DD" onchange="set_date()">
+
+    </div>
+
+</div><br><br><br><br>
+
+<div class="row2">
+
+        <canvas id="canvas" width="480px" height="360px" onclick="get_coords()">
+
+</div>
+
+<div id='simpleModal' class='modal'>
+
+    <div class='modal-content'>
+
+        <div class='modal-header'>
+
+        <span class='closeBtn'>&times;</span>
+
+        <h2 id="modal_title"></h2>
+
+        </div>
+
+        <div class='modal-body'>
+
+            <div class='modal_cont_col'>
+
+                <div class='modal_cont_row'>
+
+                            <h3>Highlights</h3>
+
+                </div>
+
+                <div class='modal_cont_row'>
+
+                    <div class='modal_box'>
+
+                            <p><b>Total Sales</b></p>
+                            <p><b>Total Items</b></p>
+                            <p><b>Total Amount</b></p>
+                            <p><b>Total Profits</b></p>
+                            <p><b>New Customers</b></p>
+
+                    </div>
+
+                    <div class='modal_box'>
+
+                            <p id='total_sales'></p>
+                            <p id='total_prods'></p>
+                            <p id='total_amt'></p>
+                            <p id='total_prof'></p>
+                            <p id='new_cus'></p>
+
+                    </div>
+
+               </div>
+
+                
+
+                <div class='modal_cont_row'>
+
+                            <h3>Products</h3>
+
+                </div>
+
+                <div class='modal_cont_row' style='font-size:0.5rem;'>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Product</i></b></p>
+                            <div id='prod_name_zone'></div>
+
+                    </div>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Amount</i></b></p>
+                            <div id='prod_rnk_zone'></div>
+
+                    </div>
+
+
+                </div>
+
+                <div class='modal_cont_row'>
+
+                            <h3>Vendors</h3>
+
+                </div>
+
+                <div class='modal_cont_row'>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Vendor</i></b></p>
+                            <div id='vnd_name_zone'></div>
+                    
+                    </div>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Amount</i></b></p>
+                            <div id='vnd_rnk_zone'></div>
+
+                    </div>
+
+               </div>
+
+            <div class='modal_cont_row'>
+
+                            <h3>Areas</h3>
+
+                </div>
+
+            <div class='modal_cont_row'>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>City</i></b></p>
+                            <div id='city_name_zone'></div>
+
+                    </div>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Amount</i></b></p>
+                            <div id='city_rnk_zone'></div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class='row2' id='embed' style='display:none;'>
+
+<div class='modal-content'>
+
+        <div class='modal-header'>
+            <h2 id='embed_header'></h2>
+        </div>
+
+        <div class='modal-body'>
+
+            <div class='modal_cont_col'>
+
+                <div class='modal_cont_row'>
+
+                            <h3>Highlights</h3>
+
+                </div>
+
+                <div class='modal_cont_row'>
+
+                    <div class='modal_box'>
+
+                            <p><b>Total Sales</b></p>
+                            <p><b>Total Items</b></p>
+                            <p><b>Total Amount</b></p>
+                            <p><b>Total Profits</b></p>
+                            <p><b>New Customers</b></p>
+
+                    </div>
+
+                    <div class='modal_box'>
+
+                            <p id='total_sales_a'></p>
+                            <p id='total_prods_a'></p>
+                            <p id='total_amt_a'></p>
+                            <p id='total_prof_a'></p>
+                            <p id='new_cus_a'></p>
+
+                    </div>
+
+               </div>
+
+                
+
+                <div class='modal_cont_row'>
+
+                            <h3>Products</h3>
+
+                </div>
+
+                <div class='modal_cont_row' style='font-size:0.5rem;'>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Product</i></b></p>
+                            <div id='prod_name_zone_a'></div>
+
+                    </div>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Amount</i></b></p>
+                            <div id='prod_rnk_zone_a'></div>
+
+                    </div>
+
+
+                </div>
+
+                <div class='modal_cont_row'>
+
+                            <h3>Vendors</h3>
+
+                </div>
+
+                <div class='modal_cont_row'>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Vendor</i></b></p>
+                            <div id='vnd_name_zone_a'></div>
+                    
+                    </div>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Amount</i></b></p>
+                            <div id='vnd_rnk_zone_a'></div>
+
+                    </div>
+
+               </div>
+
+            <div class='modal_cont_row'>
+
+                            <h3>Areas</h3>
+
+                </div>
+
+            <div class='modal_cont_row'>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>City</i></b></p>
+                            <div id='city_name_zone_a'></div>
+
+                    </div>
+
+                    <div class='modal_box'>
+
+                            <p><b><i>Amount</i></b></p>
+                            <div id='city_rnk_zone_a'></div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+</div>
+
+</div>
+
+<footer>
+
+	<ul><li><div href="https://vnd.rf.gd/BLOG" class="sw_foot">Go Blog</div></li>
+		<li><img onclick="" src="./img/logo.svg" class="logo" title="Vending Operating System"></li>
+		<li><p class="footlinks_first">VndOS</li>
+		<li><p class="footlinks"><div id='footer_date'></div> All rights reserved.</li>
+		<li><div id="ani_box"></div></li>
+	</ul>
+</footer>
+
+<script src="./modules/data.js" type="text/javascript"></script>
+<script src="./modules/modal.js" type="text/javascript"></script>
+<script src="./main.js" type="text/javascript"></script>
+
+</body>
+</html>
