@@ -77,7 +77,7 @@ window.addEventListener("load", function(){
 
         
 
-        if(month.length === 2){
+        if(parseInt(month) >= 10){
 
             today = year + '-' + (month+1) 
         }else{
@@ -85,7 +85,7 @@ window.addEventListener("load", function(){
             today = year + '-0' + (month+1)
         }
 
-        if(day.length === 2){
+        if(parseInt(day) >= 2){
 
             today += '-' + (day)
         }else{
@@ -105,7 +105,7 @@ window.addEventListener("load", function(){
 
         const day2 = today_ago.getDate()
 
-        if(month.length === 2){
+        if(parseInt(month) >= 10){
 
             today_ago = year2 + '-' + (month2+1) 
         }else{
@@ -113,7 +113,7 @@ window.addEventListener("load", function(){
             today_ago = year2 + '-0' + (month2+1)
         }
 
-        if(day.length === 2){
+        if(parseInt(day) >= 2){
 
             today_ago += '-' + (day2)
         }else{
