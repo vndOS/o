@@ -85,7 +85,7 @@ window.addEventListener("load", function(){
             today = year + '-0' + (month+1)
         }
 
-        if(parseInt(day) >= 2){
+        if(parseInt(day) >= 10){
 
             today += '-' + (day)
         }else{
@@ -113,7 +113,7 @@ window.addEventListener("load", function(){
             today_ago = year2 + '-0' + (month2+1)
         }
 
-        if(parseInt(day) >= 2){
+        if(parseInt(day) >= 10){
 
             today_ago += '-' + (day2)
         }else{
