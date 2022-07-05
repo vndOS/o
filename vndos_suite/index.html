@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vending Operating System VndOS suite</title>
+
+ <meta name="description" content="VndOS suite is the former client integration for VndOS App, can be executed in any operating system, includes all features from the cloud application and makes possible the offline working for sales management"/>
+    <meta charset="UTF-8">
+<link rel="icon" href="img/logo.svg" type="image/icon type">
+<link rel="stylesheet" href="./vndos_style.css">
+
+<style>
+
+#canvas{
+
+    cursor: pointer;
+    width:90%;
+    margin-left:0px;
+    box-shadow:0 0 20px 10px black;
+    background-color:white;
+    border-radius:10px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="navbar">
+
+	<ul>
+		<li><a href="#" id="win_anch" class="navlinks_first_active" onClick="win_con()">Windows</a></li>
+		<li><a href="#" id="mac_anch" class="navlinks" onClick="mac_con()">MAC</a></li>
+		<li><a href="#" id="lin_anch" class="navlinks" onClick="lin_con()">Linux</a></li>
+	</ul>
+
+</div><br>
+
+<br><br><center>
+
+<div class="row2">
+
+	<div id="simpleModal" class="modal">
+
+    	<div class="modal-content" id="frame_content">
+		
+			<span class='closeBtn'>&times;</span>
+			
+			<iframe src="./tuto/index.html" class="content" name="content" width="100%" height="750px">
+			</iframe>
+			
+    	</div>
+		
+	</div>
+
+</div>
+
+<h3><i><a href="./Vndos_suite.jar">Vndos_suite.jar</a> requires Java installed</i></h3>
+
+<div id="showcase" class="showcase_win">
+
+	<div class="row2">
+		
+			<a class="btn1" href="./Vndos_suite.jar">Download VndOS suite executable</a>
+	
+	</div><br>
+	
+	<div class="row2" id="btn_ask">
+	
+		<button class="btn3" onClick="show_content()">How to install Java on My <span id="os_span">Windows</span> Device?</button>
+	
+	</div>
+	
+	<div class="row2" id="os_content" style="display:none;">
+	
+		<iframe id="vid_frame" width="560" height="315" src="https://www.youtube.com/embed/wTyzIEC8dLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	
+	</div><br>
+	
+	<div class="row2">
+	
+		<button class="btn1" onClick="show_slider()">How to Import My Data from VndOS App?</button>
+	
+	</div>
+
+</div>
+
+<br><br><br><br><br>
+
+<footer>
+
+	<ul><li><a title="Say Something!" href="https://vndos.herokuapp.com/blog" class="sw_foot" style="text-decoration:none;">Go Blog</a></li>
+		<li><img src="img/logo.svg" class="logo" title="VndOS App"></li>
+		<li><p class="footlinks_first">VndOS</li>
+		<li><p class="footlinks">&copy; <span id='footer_date'></span> All rights reserved.</li>
+		<li><div id="ani_box"></div></li>
+	</ul>
+	
+</footer>
+
+<script>
+
+let ani_box
+let current_time
+let footer_date
+let showcase
+let win_anch
+let mac_anch
+let lin_anch
+let vid_frame
+let os_content
+let btn_ask
+let modal
+let closeBtn
+let frame_content
+let os_span
+
+window.addEventListener('load', ()=>{
+
+	ani_box = document.getElementById('ani_box')
+	ani_box.style.display = 'none'
+	
+	showcase = document.getElementById('showcase')
+	vid_frame = document.getElementById('vid_frame')
+	os_content = document.getElementById('os_content')
+	win_anch = document.getElementById('win_anch')
+	mac_anch = document.getElementById('mac_anch')
+	lin_anch = document.getElementById('lin_anch')
+	btn_ask = document.getElementById('btn_ask')
+	frame_content = document.getElementById('frame_content')
+	os_span = document.getElementById('os_span')
+	
+	modal = document.getElementById('simpleModal')	
+	closeBtn = document.getElementsByClassName('closeBtn')[0]
+	closeBtn.addEventListener('click', closeModal)
+	
+	current_time = new Date()
+	current_time = current_time.getFullYear()
+	
+	footer_date= document.getElementById('footer_date')
+	footer_date.innerText = current_time
+
+})
+
+function win_con(){
+
+	modal.style.display = 'none'
+	win_anch.className = 'navlinks_first_active'
+	mac_anch.className = 'navlinks'
+	lin_anch.className = 'navlinks'
+	
+	showcase.className = 'showcase_win'
+	
+	vid_frame.src = 'https://www.youtube.com/embed/wTyzIEC8dLE'
+	os_span.innerText = 'Windows'
+}
+
+function mac_con(){
+
+	modal.style.display = 'none'
+	win_anch.className = 'navlinks_first'
+	mac_anch.className = 'navlinks_active'
+	lin_anch.className = 'navlinks'
+	
+	showcase.className = 'showcase_mac'
+	
+	vid_frame.src = 'https://www.youtube.com/embed/7mpmGCKVsxs'
+	os_span.innerText = 'MAC'
+}
+
+function lin_con(){
+
+	modal.style.display = 'none'
+	win_anch.className = 'navlinks_first'
+	mac_anch.className = 'navlinks'
+	lin_anch.className = 'navlinks_active'
+	
+	showcase.className = 'showcase_lin'
+	
+	vid_frame.src = 'https://www.youtube.com/embed/GEK8skJuvk8'
+	os_span.innerText = 'Linux'
+}
+
+function show_content(){
+
+	os_content.style.display = 'block'
+	btn_ask.style.display = 'none';
+}
+
+function show_slider(){
+
+	modal.style.display = 'block'
+	frame_content.scrollIntoView({behavior: 'smooth'})
+}
+
+function closeModal(){
+
+	modal.style.display = 'none'
+}
+
+</script>
+
+</body>
+</html>
