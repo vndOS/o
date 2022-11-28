@@ -107,7 +107,7 @@ window.addEventListener("load", function(){
 	
 	console.log(parseInt(month2))
 
-        if(parseInt(month2+1) >= 10){
+        if((parseInt(month2) + 1) >= 10){
 
             today_ago = year2 + '-' + (month2+1) 
         }else{
