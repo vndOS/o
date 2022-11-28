@@ -98,14 +98,14 @@ window.addEventListener("load", function(){
         date_to.value = today
 
         let today_ago = add_days(today, -30)
-	
-	console.log("today ago" + today_ago)
 
         const year2 = today_ago.getFullYear()
 
         const month2 = today_ago.getMonth()
 
         const day2 = today_ago.getDate()
+	
+	console.log(parseInt(month2))
 
         if(parseInt(month2) >= 10){
 
@@ -155,8 +155,6 @@ function set_date(){
     let date_from_lit = date_from
     let date_to_lit = date_to
 
-    console.log(date_from_lit)
-
     if((date_from && date_to) && date_to > date_from){
 
 		if(flag_not_1st_time === 1){
@@ -181,7 +179,7 @@ function set_date(){
 
 // - - - Embed Highlights - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 	    
-	console.log(date_from + "\n\n" + date_to)
+	
 
 
         const year3 = date_from.getFullYear()
