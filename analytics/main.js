@@ -98,6 +98,8 @@ window.addEventListener("load", function(){
         date_to.value = today
 
         let today_ago = add_days(today, -30)
+	
+	console.log("today ago" + today_ago)
 
         const year2 = today_ago.getFullYear()
 
