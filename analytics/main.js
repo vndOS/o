@@ -178,6 +178,8 @@ function set_date(){
         draw_intervals(diff, date_from_lit, date_to_lit)
 
 // - - - Embed Highlights - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	    
+	console.log(date_from + "\n\n" + date_to)
 
 
         const year3 = date_from.getFullYear()
